@@ -1,0 +1,26 @@
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    date_of_birth DATE NOT NULL,
+    gender CHAR(1),
+    enrollment_date DATE NOT NULL
+);
+
+
+INSERT INTO students VALUES
+(1, 'Alice Brown', 'alice@example.com', '2002-05-10', 'F', '2021-08-01');
+
+
+ALTER TABLE students
+ADD phone_number VARCHAR(15);
+
+
+ALTER TABLE students
+RENAME COLUMN full_name TO student_name;
+
+
+ALTER TABLE students
+DROP COLUMN gender;
+
+select * from students
